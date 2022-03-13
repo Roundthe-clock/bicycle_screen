@@ -30,7 +30,7 @@ void loop()
                 //开始界面
                 led = true; //记录使用信息
             }
-            int distanceDate = BTserial.read(); //将软件串口接收的路程信息赋值给distanceDate
+            int distanceDate = BTserial.read(); //将蓝牙接收的路程信息赋值给distanceDate
 
             //显示路程图像
             finish = true; //记录使用信息
