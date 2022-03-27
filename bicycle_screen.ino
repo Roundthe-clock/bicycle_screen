@@ -11,7 +11,7 @@ void setup()
     BTserial.begin(9600); // HC-06 默认波特率为9600
 
     pinMode(ledIf, OUTPUT); //将引脚3设置为输出模式
-    pinMode(ledIf, OUTPUT); //将引脚9设置为输出模式
+    pinMode(buzIf, OUTPUT); //将引脚9设置为输出模式
 
     pinMode(ptIf, INPUT); //将引脚11设置为输入模式
 
