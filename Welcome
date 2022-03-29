@@ -1,0 +1,27 @@
+#include <SPI.h>
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+ 
+#define OLED_RESET 4
+Adafruit_SSD1306 display(OLED_RESET);
+ 
+// this is the bitmap, change this variable for your specification.
+const unsigned char myBitmap [] PROGMEM = 
+ 
+{
+  //在此将转变后的图像程序代码输入进去
+  };
+ 
+void setup() 
+{
+  display.begin(SSD1306_SWITCHCAPVCC, 0x3C);  // here the 0x3c is the I2C address, check your i2c address if u have multiple devices.
+  display.clearDisplay();
+  delay(2000);
+}
+ 
+void loop() 
+{
+  display.drawBitmap(0, 0, myBitmap, 128, 64, WHITE);
+  display.display();
+}
