@@ -1,10 +1,5 @@
-void setup() {
-  Serial.begin(9600);
-  pinMode(11, OUTPUT);
-}
-void loop() {
+void dwq(){
   int analogInputVal=analogRead(A0);//读取模拟输入值
   int brightness=map(analogInputVal,0,1023,0,255);//将模拟输入等比映射到模块
   analogWrite(11,brightness);///根据模拟输入调节LED亮度
-  
 }
