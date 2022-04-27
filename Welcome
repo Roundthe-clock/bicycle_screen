@@ -5,7 +5,7 @@
  
 #define OLED_RESET 4
 Adafruit_SSD1306 display(OLED_RESET);
- 
+welcome(char myBitmap [] PROGMEM){ 
 const unsigned char myBitmap [] PROGMEM = 
  
 {
@@ -23,4 +23,5 @@ void loop()
 {
   display.drawBitmap(0, 0, myBitmap, 128, 64, WHITE);
   display.display();
+}
 }
