@@ -1,0 +1,10 @@
+void Buzzeer(){
+  digitalWrite(buzIf,HIGH);
+  //输入HIGH电平，停止发生
+  delay(1000);
+  //等待1000毫秒（即1秒）
+  digitalWrite(bizIf,LOW);
+  //输入LOW电平，发声
+  delay(1000);
+  //等待1000毫秒（即1秒）
+}
