@@ -1,5 +1,11 @@
 #include <SoftwareSerial.h>
 
+#include <SPI.h>
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+#define OLED_RESET 4 //定义重置参数
+Adafruit_SSD1306 display(OLED_RESET); //定义重置参数
 const short ledIf = 3, buzIf = 9, ptIf = 11, blueRx = 4, blueTx = 5, pushButton = 2;
 int pt = 0;
 bool begin = false, finish = false;
@@ -16,6 +22,9 @@ void setup()
     pinMode(ptIf, INPUT); //将引脚11设置为输入模式
 
     BTserial.print("AT"); //检测蓝牙通讯是否正常
+    display.begin(SSD1306_SWITCHCAPVCC, 0x3C);  // here the 0x3c is the I2C address, check your i2c address if u have multiple devices.
+    display.clearDisplay();//清除屏幕
+    delay(2000);//清除屏幕
 }
 
 void loop()
@@ -28,6 +37,9 @@ void loop()
             if (led == false)
             {
                 //开始界面
+                 display.drawBitmap(0, 0, myBitmap, 128, 64, WHITE);
+                 display.display();
+                
                 led = true; //记录使用信息
             }
             int distanceDate = BTserial.read(); //将蓝牙接收的路程信息赋值给distanceDate
