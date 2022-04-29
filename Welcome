@@ -1,7 +1,0 @@
-welcome(char myBitmap [] PROGMEM){ 
-const unsigned char myBitmap [] PROGMEM = 
- 
-{
-  //在此将转变后的图像程序代码输入进去
-  };
-}
